@@ -1,0 +1,19 @@
+[project]
+name = "rag-practice"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Srinjoy Sur",email = "srinjoy_sur@epam.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13,<4.0.0"
+dependencies = [
+    "langchain (>=1.2.8,<2.0.0)",
+    "ujson (>=5.11.0,<6.0.0)",
+    "ragas (>=0.4.3,<0.5.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
