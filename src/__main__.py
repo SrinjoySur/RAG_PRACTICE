@@ -27,6 +27,7 @@ logger = logging.getLogger(__name__)
 app=Flask(__name__)
 @app.route("/")
 def greet():
+    logger.info("Greet Endpoint hit!!!")
     return "Welcome To My App"
 @app.route("/dial_client")
 def Test_Dial():
