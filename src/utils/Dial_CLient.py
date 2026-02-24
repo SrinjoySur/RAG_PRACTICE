@@ -17,12 +17,13 @@ logging.basicConfig(
     filename=log_dir / f"log_{log_timestamp}.txt"
 )
 logger = logging.getLogger(__name__)
+_=load_dotenv()
 class DIALCLIENT:
     def __init__(self,api_key:Optional[str]=None,model:Optional[str]="gpt-4") -> None:
         self.api_key=api_key or os.getenv("DIAL_API_KEY","<YOUR_API_KEY_HERE>")
         self.model=model
         self.endpoint=os.getenv("DIAL_ENDPOINT","<YOUR_ENDPOINT>")
-        self.api_version="2025-07-01"
+        self.api_version="2024-02-01"
         try:
             self.client=AzureOpenAI(
                 api_key=self.api_key,
