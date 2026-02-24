@@ -2,7 +2,6 @@
 name = "rag-practice"
 version = "0.1.0"
 description = ""
-package-mode = false
 authors = [
     {name = "Srinjoy Sur",email = "srinjoy_sur@epam.com"}
 ]
