@@ -19,7 +19,7 @@ log_dir.mkdir(exist_ok=True)
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    filename=log_dir / f"log_{log_timestamp}.txt"
+    filename=log_dir / f"embedder_log_{log_timestamp}.txt"
 )
 logger = logging.getLogger(__name__)
 
@@ -30,7 +30,9 @@ class HFEmbedder:
         self.api_key=api_key or os.getenv("HF_API_KEY","<YOUR_HF_API_KEY>")
         self.model_name=model_name
         try:
-            self.client=HuggingFaceEmbeddings(model_name=self.model_name)
+            self.client=HuggingFaceEmbeddings(
+                model_name=self.model_name
+            )
             if not self.api_key or self.api_key=="<YOUR_HF_API_KEY>":
                 logger.error(f"[ERROR] HF Initialization api key is incorrect:{self.api_key}")
                 self.client=None
@@ -52,7 +54,7 @@ class HFEmbedder:
             if not self.client:
                 logger.error("[ERROR]  HF Client not Initialized")
             else:
-                return self.client.embed_document(pages)
+                return self.client.embed_documents(pages)
         except Exception as e:
             logger.error(f"[ERROR] HF Embeddings get_embeddings_of_document_contents() has encountered an exception:{e}")
     def print_doc_embeddings(self,embeddings):
