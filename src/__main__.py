@@ -24,7 +24,7 @@ logging.basicConfig(
     filename=log_dir / f"main_app_log_{log_timestamp}.txt"
 )
 logger = logging.getLogger(__name__)
-app=Flask(__name__)
+app=Flask(__name__,template_folder="ui/templates")
 @app.route("/")
 def greet():
     logger.info("Greet Endpoint hit!!!")
