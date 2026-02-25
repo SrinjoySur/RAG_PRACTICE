@@ -5,7 +5,7 @@ from langchain_openai.embeddings import AzureOpenAIEmbeddings
 from langchain_community.document_loaders import WebBaseLoader,UnstructuredFileLoader
 from langchain_core.documents import Document
 from typing import Optional,List,Any
-from dotenv import load_dotenv,find_dotenv
+from dotenv import load_dotenv
 import logging
 from pathlib import Path
 from datetime import datetime
