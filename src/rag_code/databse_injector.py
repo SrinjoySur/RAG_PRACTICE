@@ -27,7 +27,7 @@ logger = logging.getLogger(__name__)
 _=load_dotenv()
 
 class DATABASEINJECTOR:
-    def __init__(self, config):
+    def __init__(self):
         self.host = os.getenv("DATABASE_HOST")
         self.port=os.getenv("DATABASE_PORT")
         self.database=os.getenv("DATABASE_NAME")
