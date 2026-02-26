@@ -1,11 +1,6 @@
-# from fastapi import FastAPI
-
-# app=FastAPI(description="""
-#             Sample App Implementation.
-#             """)
-# @app.get("/greet")
-# def greet():
-#     return "Welcome To My App"
+"""
+Main App Runner
+"""
 from flask import Flask
 
 app=Flask(__name__)
