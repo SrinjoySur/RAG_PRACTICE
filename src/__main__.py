@@ -14,7 +14,7 @@ from pathlib import Path
 from datetime import datetime
 log_timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 log_dir = Path(__file__).resolve().parent.parent / "logs"
-
+from api.routes import welcome_bp
 # Ensure the logs directory exists
 log_dir.mkdir(exist_ok=True)
 
@@ -55,6 +55,6 @@ def example_dial_implementation():
     response=client.get_completion(messages=message)
     logger.info(f"[OK] Response Recieved:{response}")
     return response
-
+app.register_blueprint(welcome_bp)
 app.run(host="0.0.0.0",port="8080")
     
